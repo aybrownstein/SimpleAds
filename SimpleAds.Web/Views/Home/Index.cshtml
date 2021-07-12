@@ -1,0 +1,23 @@
+﻿@model HomeViewModel
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+     @foreach(var ad in Model.GetAds)
+            {
+                <div class="jumbotron">
+                    <h5>@ad.Ad.UserName</h5>
+                    <h5>@ad.Ad.Title</h5>
+                    <h5>@ad.Ad.PhoneNumber</h5>
+                    <h3>Details:</h3>
+                    <p>@ad.Ad.Description</p>
+                    @if (ad.CanDelete)
+                {
+                    <form method="post" action="/Home/Delete">
+                        <input type="hidden" name="Id" value="@ad.Ad.Id" />
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                }
+                </div>
+            }
+    </div>
+</div>

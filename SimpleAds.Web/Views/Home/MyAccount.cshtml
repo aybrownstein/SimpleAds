@@ -1,0 +1,23 @@
+﻿@using SimpleAds.Data
+@model List<Ad>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        @foreach (var ad in Model)
+        {
+            <div class="jumbotron">
+                
+                <h5>@ad.Title</h5>
+                <h5>@ad.PhoneNumber</h5>
+                <h3>Details:</h3>
+                <p>@ad.Description</p>
+             
+                    <form method="post" action="/Home/Delete">
+                        <input type="hidden" name="Id" value="@ad.Id" />
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                
+            </div>
+        }
+    </div>
+</div>

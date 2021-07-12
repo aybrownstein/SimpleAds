@@ -1,0 +1,13 @@
+﻿<div class="col-md-6 offset-md-3 jumbotron">
+    <h1>Log In!</h1>
+    @if (ViewBag.Message != null)
+            {
+                <span class="text-danger">@ViewBag.Message</span>
+            }
+    <form method="post" action="/Home/LogIn">
+        <input type="text" class="form-control" name="email" placeholder="Email"/><br/>
+        <input type="password" class="form-control" name="password" placeholder="password"/><br/>
+        <button class="btn btn-primary btn-block btn-lg">Log In</button>
+        <a href="/Home/SignUp">Don't Have an Account? Sign Up Here</a>
+    </form>
+</div>
